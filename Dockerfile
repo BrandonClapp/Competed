@@ -11,5 +11,7 @@ RUN dotnet publish -c Release -o out
 # Build runtime image
 FROM microsoft/aspnetcore:2.0
 WORKDIR /app
-COPY --from=build-env /app/out .
+RUN ls
+COPY --from=build-env /app/Competed/out/ .
+RUN ls
 ENTRYPOINT ["dotnet", "Competed.dll"]
