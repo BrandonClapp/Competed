@@ -1,10 +1,11 @@
 FROM microsoft/aspnetcore-build:2.0 AS build-env
 WORKDIR /app
 
-RUN dotnet restore
-
 # Copy everything and build
 COPY . ./
+
+RUN ls
+RUN dotnet restore
 RUN dotnet publish -c Release -o out
 
 # Build runtime image
