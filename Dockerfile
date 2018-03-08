@@ -14,4 +14,5 @@ WORKDIR /app
 RUN ls
 COPY --from=build-env /app/Competed/out/ .
 RUN ls
+EXPOSE 5000
 ENTRYPOINT ["dotnet", "Competed.dll"]
