@@ -4,7 +4,6 @@ WORKDIR /app
 # Copy everything and build
 COPY . ./
 
-RUN ls
 RUN dotnet restore
 RUN dotnet publish -c Release -o out
 
@@ -12,7 +11,6 @@ RUN dotnet publish -c Release -o out
 FROM microsoft/aspnetcore:2.0
 WORKDIR /app
 RUN ls
-COPY --from=build-env /app/Competed/out/ .
+COPY --from=build-env /app/out/ .
 RUN ls
-EXPOSE 5000
 ENTRYPOINT ["dotnet", "Competed.dll"]
