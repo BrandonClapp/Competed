@@ -1,3 +1,5 @@
+FROM node:8.10.0-onbuild
+
 FROM microsoft/aspnetcore-build:2.0 AS build-env
 WORKDIR /app
 
