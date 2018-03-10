@@ -1,4 +1,3 @@
-require("!style-loader!css-loader!../wwwroot/styles.css");
 import 'reflect-metadata';
 import 'zone.js';
 
