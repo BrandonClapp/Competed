@@ -1,0 +1,8 @@
+﻿.banner {
+    height: 450px;
+    background-color: rebeccapurple;
+}
+
+.cta {
+    background-image: linear-gradient(180deg,#f07155,#ff8f59);
+}
