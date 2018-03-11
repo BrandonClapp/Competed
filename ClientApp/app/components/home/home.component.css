@@ -1,6 +1,19 @@
 ﻿.banner {
+    position: relative;
     height: 450px;
     background-color: rebeccapurple;
+    background-image: url("images/esports-event.jpg");
+    background-position: bottom;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    right:0;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.7;
 }
 
 .cta {

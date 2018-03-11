@@ -4,6 +4,15 @@ body {
     font-family: Arial;
 }
 
+.section {
+
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+}
+
 .clearfix:after {
     clear: both;
 }
