@@ -20,15 +20,30 @@
     width: 600px;
     margin: 0 auto;
     text-align: center;
+    padding: 30px;
 }
 
-.banner-content .content-block {
-    background-color: #ccc;
-    border: 1px solid black;
-    padding: 30px;
-    margin: 15px;
-    float: left;
+.banner-content .content-blocks {
+    width: 710px;
+    margin: 0 auto;
 }
+
+    .banner-content .content-block {
+        background-color: #74CAC7;
+        color: black;
+        border: 1px solid black;
+        padding: 30px;
+        margin: 15px;
+        float: left;
+        cursor: pointer;
+        user-select: none;
+    }
+
+        .banner-content .content-block:hover {
+
+            background-color: #4B4B71;
+            color: white;
+        }
 
     .banner-content .content-block:after {
         clear: left;
