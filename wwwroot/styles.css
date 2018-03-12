@@ -10,7 +10,7 @@ body {
 }
 
 .section {
-
+    padding: 30px;
 }
 
 .container {
@@ -18,6 +18,6 @@ body {
     margin: auto;
 }
 
-.clearfix:after {
+.clearfix {
     clear: both;
 }

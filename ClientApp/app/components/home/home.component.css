@@ -56,13 +56,66 @@
 }
 
 .featured-tournaments {
-    margin: 0px;
-    padding: 1px;
     background-color: #E0DEE3;
 }
 
+    .featured-tournaments .tournament {
+        float: left;
+        width: 225px;
+        margin-left: 14px;
+        cursor: pointer;
+    }
+
+    .featured-tournaments .tournament:nth-of-type(1) {
+        margin-left:0;
+    }
+
+    .featured-tournaments .tournament .image {
+        max-height: 300px;
+    }
+        .featured-tournaments .tournament .info {
+            background-color: #1e2f36;
+            color: white;
+            padding: 5px;
+        }
+
 .top-games {
-    margin: 0px;
-    padding: 1px;
     background-color: #E0DEE3;
+    text-align: justify;
 }
+
+    .top-games .game {
+        float: left;
+        width: 225px;
+        margin-left: 14px;
+        cursor: pointer;
+    }
+
+    .top-games .game:nth-of-type(1) {
+        margin-left: 0px;
+    }
+
+        .top-games .game .image {
+            height: 300px;
+            background-size: cover;
+            /*filter: grayscale(100%);*/
+            transition: all 0.2s ease;
+        }
+
+            .top-games .game .image:hover {
+                /*filter: grayscale(0%);*/
+                transform: scale(1.025);
+            }
+
+    .top-games .game .image.league-of-legends {
+        background-image: url(./images/games/league-of-legends.jpg);
+    }
+    .top-games .game .image.minecraft {
+        background-image: url(./images/games/minecraft.png);
+    }
+    .top-games .game .image.rocket-league {
+        background-image: url(./images/games/rocket-league.jpg);
+    }
+    .top-games .game .image.magic-the-gathering {
+        background-image: url(./images/games/magic-the-gathering.jpg);
+    }
