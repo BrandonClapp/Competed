@@ -20,7 +20,7 @@
 
 
 .banner-content {
-    height: 600px;
+    /*height: 600px;*/
 }
 
 .banner-content .pitch {
@@ -33,7 +33,7 @@
 
 .banner-content .content-blocks {
     width: 710px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
     .banner-content .content-block {
@@ -55,6 +55,10 @@
 
     .banner-content .content-block:after {
         clear: left;
+    }
+
+    .banner-content .bracket {
+        margin: 20px 0;
     }
 
 .cta {
