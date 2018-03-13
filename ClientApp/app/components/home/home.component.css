@@ -63,14 +63,14 @@
 }
 
 .featured-tournaments {
-    background-position: center;
-    background-image: url("images/home-banner-11.jpg");
-    background-size: cover;
+    background-image: url(images/home-banner-4.jpg);
 }
 
 .featured-tournaments-content {
     /*background-color: rgba(30,47,54, 0.8);*/
-    background: linear-gradient(284deg, rgba(114, 202, 199, 0), rgba(69, 15, 110, .25), rgba(30,47,54,.6), rgba(30,47,54,.7) )
+    border-top: 1px solid #ececec;
+    /*background: linear-gradient(284deg, #ececec, #ececec, #48595d, rgba(30,47,54,.7) )*/
+    background: linear-gradient(rgba(255,255,255,0.8), #fff)
 }
 
     .featured-tournaments .tournament {
@@ -90,27 +90,19 @@
         bottom: 0px;
     }
 
-    .featured-tournaments .tournament .image img {
-        filter: grayscale(50%);
-        transition: all 0.3s ease;
-    }
-        .featured-tournaments .tournament .image img:hover {
-            filter: grayscale(0%);
-            transform: scale(1.025);
-        }
-
-
-
         .featured-tournaments .tournament .info {
             /*background-color: #1e2f36;*/
-            background-color: #E0DEE3;
-            color: #1e2f36;
-            padding: 5px;
+            background-color: rgba(26, 31, 34, 0.85);
+            color: white;
+            padding: 10px;
             font-size: 10pt;
             position: absolute;
             left: 0;
             right: 0;
             bottom: 0px;
+            border-left: 1px solid #1a2023;
+            border-right: 1px solid #1a2023;
+            border-bottom: 1px solid #1a2023;
         }
 
 .top-games {

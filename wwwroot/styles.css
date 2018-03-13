@@ -28,8 +28,18 @@ body {
 a {
     color: white;
     text-decoration: none;
+
+    transition: all 0.2s ease;
 }
 
+    a:hover {
+        color: #74CAC7;
+    }
+
 .light {
-    color: white;
+    color: #74CAC7;
+}
+
+.dark {
+    color: #1a2023;
 }
