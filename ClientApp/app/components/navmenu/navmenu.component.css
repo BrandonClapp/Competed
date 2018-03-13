@@ -6,7 +6,7 @@
 }
 
 .container .logo {
-    margin-top: 1em;
+    
     float: left;
 }
 
@@ -17,4 +17,8 @@
 .navigation ul li {
     display: inline-block;
     margin: 0 5px;
+}
+
+.navigation ul {
+    margin: 0;
 }
