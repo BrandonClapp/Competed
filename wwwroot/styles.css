@@ -10,14 +10,24 @@ body {
 }
 
 .section {
-    padding: 30px;
+    
 }
 
 .container {
     max-width: 950px;
     margin: auto;
+    padding: 30px;
 }
 
 .clearfix {
     clear: both;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.light {
+    color: white;
 }
