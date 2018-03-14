@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './components/app/app.component';
 import { HomeComponent } from './components/home/home.component';
+import { GamesComponent } from './components/games/games.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
@@ -14,6 +15,7 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
     declarations: [
         AppComponent,
         HomeComponent,
+        GamesComponent,
         NavMenuComponent,
         FooterComponent,
         FetchDataComponent,
@@ -24,6 +26,7 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
         FormsModule,
         RouterModule.forRoot([
             { path: '', component: HomeComponent, pathMatch: 'full' },
+            { path: 'games', component: GamesComponent, pathMatch: 'full' },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: '**', redirectTo: 'fetch-data' }
         ])

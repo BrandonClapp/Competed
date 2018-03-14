@@ -1,0 +1,13 @@
+﻿.games {
+    width: 936px;
+    box-sizing: border-box;
+}
+
+.games .game {
+    width: 200px;
+    border: 1px solid white;
+    height: 200px;
+    float: left;
+    background-color: #bbb;
+    margin: 16px;
+}
