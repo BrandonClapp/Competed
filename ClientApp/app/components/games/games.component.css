@@ -1,13 +1,52 @@
-﻿.games {
-    width: 936px;
-    box-sizing: border-box;
+﻿.page {
+    background: url(images/home-banner-12.jpg);
 }
 
-.games .game {
-    width: 200px;
-    border: 1px solid white;
-    height: 200px;
-    float: left;
-    background-color: #bbb;
-    margin: 16px;
+    .page .page-gradient {
+        background: linear-gradient(315deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0.4), rgba(20,8,5,0.6), rgba(20,8,5,0.7) )
+    }
+
+    .page .fade {
+        background: linear-gradient(180deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0), rgba(20,8,5,1) 93%);
+    }
+
+/*.games {
+    background: linear-gradient(315deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0.4), rgba(20,8,5,0.6), rgba(20,8,5,0.7) );
+}*/
+
+.holder {
+    background-color: #bac6c7;
+    /*padding: 1em;*/
+    border-radius: 3px;
+    border: 1px solid black;
 }
+
+.games-content {
+    background: rgba(30,47,54, 0.6);
+    
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1em;
+}
+
+.row:last-of-type {
+    margin-bottom: 1em;
+}
+
+    .row .game {
+        width: 300px;
+        height: 150px;
+        background-color: #1d2e35;
+    }
+
+    .row .empty {
+        width: 300px;
+        height: 150px;
+    }
+
+        .row .game:hover {
+            filter: brightness(85%);
+        }
