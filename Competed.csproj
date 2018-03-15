@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\app\components\games\images\" />
+    <Folder Include="wwwroot\static\" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

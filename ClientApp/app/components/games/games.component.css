@@ -10,46 +10,10 @@
         background: linear-gradient(180deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0), rgba(20,8,5,1) 93%);
     }
 
-/*.games {
-    background: linear-gradient(315deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0.4), rgba(20,8,5,0.6), rgba(20,8,5,0.7) );
-}*/
-
-
-.holder {
-}
-
 .games-content {
     /*background: rgba(30,47,54, 0.6);*/
     background: #edf5f7;
     color: #576e91;
 }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1em;
-    flex-wrap: wrap;
-}
 
-.row:last-of-type {
-    margin-bottom: 1em;
-}
-
-    .row .game {
-        /*width: 150px;*/
-        width: calc(100% / 6.3);
-        background-color: #1d2e35;
-        cursor: pointer;
-    }
-
-.game img {
-    max-width: 100%;
-    max-height: 100%;
-}
-.row .empty {
-    width: calc(100% / 6.3)
-}
-
-        .row .game:hover {
-            filter: brightness(85%);
-        }

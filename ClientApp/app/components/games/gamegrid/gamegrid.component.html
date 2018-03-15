@@ -1,0 +1,12 @@
+﻿<div class="supports"></div>
+
+<ul class="grid">
+
+    <li *ngFor="let game of games" [routerLink]="['/tournaments/', game.slug]">
+        <img alt="{{ game.name }}" src="{{game.imgUrl}}" />
+        <div>
+            <a [routerLink]="['/tournaments', game.slug]">{{ game.name }}</a>
+        </div>
+    </li>
+
+</ul>
