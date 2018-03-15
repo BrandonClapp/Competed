@@ -1,5 +1,5 @@
 ﻿.page {
-    background: url(images/home-banner-12.jpg);
+    background: url(images/games-banner.jpg);
 }
 
     .page .page-gradient {
@@ -14,6 +14,7 @@
     background: linear-gradient(315deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0.4), rgba(20,8,5,0.6), rgba(20,8,5,0.7) );
 }*/
 
+
 .holder {
     background-color: #bac6c7;
     /*padding: 1em;*/
@@ -23,7 +24,6 @@
 
 .games-content {
     background: rgba(30,47,54, 0.6);
-    
 }
 
 .row {
@@ -40,6 +40,7 @@
         width: 300px;
         height: 150px;
         background-color: #1d2e35;
+        cursor: pointer;
     }
 
     .row .empty {
