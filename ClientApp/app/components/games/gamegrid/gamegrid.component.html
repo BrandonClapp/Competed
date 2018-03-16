@@ -1,6 +1,4 @@
-﻿<div class="supports"></div>
-
-<ul class="grid">
+﻿<ul class="grid">
 
     <li *ngFor="let game of games" [routerLink]="['/tournaments/', game.slug]">
         <img alt="{{ game.name }}" src="{{game.imgUrl}}" />

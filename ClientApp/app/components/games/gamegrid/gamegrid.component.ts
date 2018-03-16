@@ -1,39 +1,38 @@
-﻿import { Component, Input } from '@angular/core';
+﻿import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
     selector: 'gamegrid',
     templateUrl: './gamegrid.component.html',
     styleUrls: ['./gamegrid.component.css']
 })
-export class GameGridComponent {
+export class GameGridComponent implements OnInit, OnChanges {
 
-    @Input() games: Array<Game>
-    constructor() {
-        this.games = [
-            <Game>{ name: 'League of Legends', slug: 'league-of-legends' },
-            <Game>{ name: 'Rocket League', slug: 'rocket-league' },
-            <Game>{ name: 'Fortnite', slug: 'fortnite' },
-            <Game>{ name: 'Hearthstone', slug: 'hearthstone' },
-            <Game>{ name: 'Counter Strike: GO', slug: 'counter-strike-global-offensive' },
-            <Game>{ name: 'Minecraft', slug: 'minecraft' },
-            <Game>{ name: 'Battlefield 1', slug: 'battlefield-1' },
-            <Game>{ name: 'Battlerite', slug: 'battlerite' },
-            <Game>{ name: 'Dota 2', slug: 'dota-2' },
-            <Game>{ name: 'Heroes of the Storm', slug: 'heroes-of-the-storm' },
-            <Game>{ name: 'Madden NFL 18', slug: 'madden-nfl-18' },
-            <Game>{ name: 'Overwatch', slug: 'overwatch' },
-            <Game>{ name: 'Paladins', slug: 'paladins' },
-            <Game>{ name: 'PUBG', slug: 'playerunknowns-battlegrounds' },
-            <Game>{ name: 'Smite', slug: 'smite' },
-            <Game>{ name: 'Starcraft 2', slug: 'starcraft-2' },
-            <Game>{ name: 'World of Warcraft', slug: 'world-of-warcraft' },
-        ];
+    @Input() filter: string;
+    @Input() games: Array<Game>;
+
+    allGames: Array<Game>;
+
+    constructor() { }
+
+    ngOnInit() {
 
         for (let game of this.games) {
             game.imgUrl = `static/images/games/${game.slug}.jpg`;
         }
+        this.allGames = Object.assign([], this.games);
+
     }
 
+    ngOnChanges(changes: SimpleChanges) {
+        console.log(changes);
+        if (changes.filter && this.allGames) {
+            this.games = this.allGames.filter((g) => {
+                let gameName = g.name.toLowerCase();
+                let filterName = this.filter.toLowerCase();
+                return gameName.includes(filterName);
+            });
+        }
+    }
 
 }
 

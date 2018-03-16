@@ -7,8 +7,10 @@
                 <div class="games-content">
                     <div class="container">
                         <h2>Games</h2>
-
-                        <gamegrid></gamegrid>
+                        <div>
+                            <input [(ngModel)]="filter" id="game-filter" type="text" placeholder="Filter" />
+                        </div>
+                        <gamegrid [games]="games" [filter]="filter"></gamegrid>
                     </div>
                 </div>
             </div>

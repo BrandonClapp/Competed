@@ -16,4 +16,13 @@
     color: #576e91;
 }
 
+    .games-content h2 {
+        color: #1a2023;
+    }
+
+#game-filter {
+    padding: 0.5em;
+    width: 300px;
+}
+
 
