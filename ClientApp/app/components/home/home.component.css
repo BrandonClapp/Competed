@@ -1,5 +1,5 @@
 ﻿.top {
-    background-image: url("images/home-banner-1.jpg");
+    background-image: url("/static/images/banner-1.jpg");
     background-position-x: center;
     background-position-y: top;
 }

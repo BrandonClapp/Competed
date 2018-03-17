@@ -1,5 +1,7 @@
 ﻿.page {
-    background: url(images/games-banner.jpg);
+    background: url(/static/images/banner-1.jpg);
+    background-position-x: center;
+    background-position-y: top;
 }
 
     .page .page-gradient {
