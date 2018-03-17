@@ -1,1 +1,45 @@
-﻿
+﻿.page {
+    background: url(/static/images/banner-1.jpg);
+    background-position-x: center;
+    background-position-y: top;
+}
+
+    .page .page-gradient {
+        /*background: linear-gradient(315deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0.4), rgba(20,8,5,0.6), rgba(20,8,5,0.7) )*/
+    }
+
+    .page .fade {
+        /*background: linear-gradient(180deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0), rgba(20,8,5,1) 93%);*/
+    }
+
+.filter-options {
+    background-color: #fff;
+    background-image: linear-gradient(to bottom, rgba(238,241,246,0.5), #fff 50%);
+    color: black;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+    .filter-options input[type=text] {
+        padding: 0.5em;
+    }
+
+.tournaments-content {
+    /*background: rgba(30,47,54, 0.6);*/
+    background: #edf5f7;
+    color: #576e91;
+}
+
+    .tournaments-content h2 {
+        color: #1a2023;
+    }
+
+
+/* Experimental */
+
+.separator {
+    background-image: -webkit-linear-gradient(left, #fff, #ddd 35%, #ddd 65%, #fff);
+    background-image: linear-gradient(to right, #fff, #ddd 35%, #ddd 65%, #fff);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+}

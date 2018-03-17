@@ -13,6 +13,8 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 
+import { GameService } from './services/game.service';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -35,6 +37,9 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
             { path: 'tournaments/:slug', component: TournamentsComponent },
             { path: '**', redirectTo: 'fetch-data' }
         ])
+    ],
+    providers: [
+        GameService
     ]
 })
 export class AppModuleShared {
