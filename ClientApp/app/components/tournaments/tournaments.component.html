@@ -1,4 +1,4 @@
-﻿<div class="page">
+﻿<div id="page" class="page" [ngStyle]="{ 'background': getBackground() }">
     <div class="page-gradient">
         <div class="fade">
             <nav-menu></nav-menu>
@@ -6,20 +6,91 @@
             <div class="tournaments">
                 <div class="tournaments-content">
 
-                    <div class="filter-options">
-                        <div class="container">
-                            <input type="text" placeholder="Title Search" />
+                    
+
+                    <div class="game-header">
+                        <div class="gradient">
+                            <div class="container">
+                                <h2>{{gameName}} Tournaments</h2>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="separator"></div>
 
                     <div>
+
                         <div class="container">
-                            <h2>{{gameName}} Tournaments</h2>
-                            <div>Content</div>
+                            <div class="filter-options">
+                                <input type="text" placeholder="Title Search" />
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Heading</th>
+                                        <th>Heading</th>
+                                        <th>Heading</th>
+                                        <th>Heading</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                        <td>Value</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+
                 </div>
             </div>
 

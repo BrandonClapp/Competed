@@ -21,10 +21,26 @@ export class TournamentsComponent implements OnInit, OnDestroy {
         this.routeSub = this.route.params.subscribe(params => {
             this.slug = params['slug'];
 
+            //let page = document.getElementById('page');
+            //if (page) {
+            //    page.style.backgroundImage = `url(/static/images/banners/${this.slug}.jpg)`;
+            //}
+
+            //console.log('page', page);
+
             this.gameService.getGame(this.slug).subscribe(game => {
                 this.gameName = game.name;
             });
         });
+    }
+
+    getBackground() {
+        if (this.slug) {
+            return `url(/static/images/banners/${this.slug}.jpg)`;
+        }
+        else {
+            return '#fff';
+        }
     }
 
     ngOnDestroy() {

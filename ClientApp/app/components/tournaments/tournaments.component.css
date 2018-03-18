@@ -5,27 +5,30 @@
 }
 
     .page .page-gradient {
-        /*background: linear-gradient(315deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0.4), rgba(20,8,5,0.6), rgba(20,8,5,0.7) )*/
+        background: linear-gradient(315deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0.4), rgba(20,8,5,0.6), rgba(20,8,5,0.7) )
     }
 
     .page .fade {
-        /*background: linear-gradient(180deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0), rgba(20,8,5,1) 93%);*/
+        background: linear-gradient(180deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0), rgba(20,8,5,1) 93%);
     }
 
 .filter-options {
-    background-color: #fff;
-    background-image: linear-gradient(to bottom, rgba(238,241,246,0.5), #fff 50%);
+    /*background-color: #fff;*/
+    /*background-image: linear-gradient(to bottom, rgba(238,241,246,0.5), #fff 50%);*/
     color: black;
     border-bottom: 1px solid #d3d3d3;
+    padding-bottom: 0.5em;
+    margin-bottom:1em;
 }
 
-    .filter-options input[type=text] {
-        padding: 0.5em;
-    }
+input[type=text] {
+    padding: 0.5em;
+}
 
 .tournaments-content {
     /*background: rgba(30,47,54, 0.6);*/
-    background: #edf5f7;
+    /*background: #edf5f7;*/
+    background: linear-gradient(rgba(255,255,255,0.8), #fff);
     color: #576e91;
 }
 
@@ -33,6 +36,33 @@
         color: #1a2023;
     }
 
+.game-header {
+    /*transform: rotate(-2deg);*/
+    background: url(/static/images/hex.png);
+    background-size: 300px, auto;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.game-header .gradient {
+    background: linear-gradient(rgba(255,255,255,0.8), #fff);
+}
+
+table {
+    width: 100%;
+    /*background: linear-gradient(to bottom, rgba(238,241,246,0.5), #fff 50%);*/
+    background: linear-gradient(rgba(255,255,255,0.8), #fff);
+    border: 1px solid #d3d3d3;
+    padding: 1em;
+    border-radius: 2px;
+    color: #1a1f22;
+}
+    table td, table th {
+        padding: 0.5em;
+    }
+
+ table th {
+     text-align: left;
+ }
 
 /* Experimental */
 
