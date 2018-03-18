@@ -11,7 +11,7 @@ import { GameService } from '../../services/game.service';
 export class TournamentsComponent implements OnInit, OnDestroy {
     private routeSub: Subscription;
     private slug: string;
-    private gameName: string;
+    gameName: string;
 
     constructor(private route: ActivatedRoute, private gameService: GameService) {
         //this.gameService = gameService;
