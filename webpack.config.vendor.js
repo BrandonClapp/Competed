@@ -15,6 +15,7 @@ const treeShakableModules = [
     'zone.js',
 ];
 const nonTreeShakableModules = [
+    'font-awesome/css/font-awesome.css',
     'normalize.css',
     'es6-promise',
     'es6-shim',
