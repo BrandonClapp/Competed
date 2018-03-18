@@ -12,9 +12,11 @@
         background: linear-gradient(180deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0), rgba(20,8,5,1) 93%);
     }
 
+.header {
+    color: #1a2023;
+}
+
 .filter-options {
-    /*background-color: #fff;*/
-    /*background-image: linear-gradient(to bottom, rgba(238,241,246,0.5), #fff 50%);*/
     color: black;
     border-bottom: 1px solid #d3d3d3;
     padding-bottom: 0.5em;
@@ -23,27 +25,51 @@
 
 input[type=text] {
     padding: 0.5em;
+    border: 1px solid #d3d3d3;
 }
 
 .tournaments-content {
-    /*background: rgba(30,47,54, 0.6);*/
-    /*background: #edf5f7;*/
     background: linear-gradient(rgba(255,255,255,0.8), #fff);
     color: #576e91;
 }
 
-    .tournaments-content h2 {
-        color: #1a2023;
+.game-info {
+    padding: 1.5em 0;
+}
+
+    .game-info .game-meta {
+        float: left;
     }
 
-.game-header {
+    .game-info .game-header {
+        line-height: 40px;
+        margin:0;
+    }
+
+    .game-info .game-icon {
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        margin-right: 1em;
+    }
+
+    
+
+.game-icon img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+    
+
+.header {
     /*transform: rotate(-2deg);*/
     background: url(/static/images/hex.png);
     background-size: 300px, auto;
     border-bottom: 1px solid #d3d3d3;
 }
 
-.game-header .gradient {
+.header .gradient {
     background: linear-gradient(rgba(255,255,255,0.8), #fff);
 }
 
