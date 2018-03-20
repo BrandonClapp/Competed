@@ -46,7 +46,7 @@
                                 <tbody>
                                     <tr *ngFor="let tournament of tournaments">
                                         <td>
-                                            <a href="#">{{ tournament.name }}</a>
+                                            <a [routerLink]="['/tournaments', tournament.game, tournament.slug]">{{ tournament.name }}</a>
                                         </td>
                                         <td>
                                             <img src="/static/images/icons/{{ tournament.game }}.png" width="25px" />
@@ -64,11 +64,7 @@
                             <div class="pagination content">
                                 <ul>
                                     <li><i class="fa fa-angle-left"></i></li>
-                                    <li class="active">1</li>
-                                    <li>2</li>
-                                    <li>3</li>
-                                    <li>4</li>
-                                    <li>5</li>
+                                    <li *ngFor="let page of pages" (click)="navigateToPage(page)">{{ page }}</li>
                                     <li><i class="fa fa-angle-right"></i></li>
                                 </ul>
                             </div>

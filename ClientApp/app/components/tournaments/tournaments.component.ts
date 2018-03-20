@@ -1,7 +1,8 @@
 ﻿import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { GameService } from '../../services/game.service';
+import { TournamentService, Tournament } from '../../services/tournament.service';
 
 @Component({
     selector: 'tournaments',
@@ -10,37 +11,59 @@ import { GameService } from '../../services/game.service';
 })
 export class TournamentsComponent implements OnInit, OnDestroy {
     private routeSub: Subscription;
-    private slug: string;
+    private gameSlug: string;
     gameInfo: any = {};
+    tournaments: Tournament[] = [];
 
-    tournaments: Array<Tournament> = [
-        <Tournament>{ name: 'Super Casual Silver Capped', game: 'league-of-legends', type: 'Single Elimination', participants: 8, capacity: 12, created: '3-18-2018', status: 'Open', organizer: 'Brandon' },
-        <Tournament>{ name: 'Rift Rivals', game: 'league-of-legends', type: 'Continuous', participants: 32, capacity: 32, created: '3-18-2018', status: 'Starting', organizer: 'Brandon' },
-        <Tournament>{ name: 'Hot HOTS', game: 'heroes-of-the-storm', type: 'Single Elimination', participants: 8, capacity: 8, created: '3-18-2018', status: 'In Progress', organizer: 'Brandon' },
-        <Tournament>{ name: 'Rocket Fuel Showdown', game: 'rocket-league', type: 'Single Elimination', participants: 8, capacity: 8, created: '3-18-2018', status: 'Finished', organizer: 'Brandon' },
-        <Tournament>{ name: 'Battle Royale', game: 'fortnite', type: 'Single Elimination', participants: 8, capacity: 16, created: '3-18-2018', status: 'Open', organizer: 'Brandon' },
-        <Tournament>{ name: 'Super Casual Silver Capped ARAM', game: 'league-of-legends', type: 'Single Elimination', participants: 7, capacity: 8, created: '3-18-2018', status: 'Open', organizer: 'Brandon' },
-        <Tournament>{ name: 'Super Casual Silver Capped ARAM', game: 'league-of-legends', type: 'Single Elimination', participants: 3, capacity: 8, created: '3-18-2018', status: 'Open', organizer: 'Brandon' },
-    ];
+    pages: number[] = [1, 2, 3, 4, 5, 6];
+    itemsPerPage: number = 20;
+    pageNum: number = 1;
 
-    constructor(private route: ActivatedRoute, private gameService: GameService) {
-        //this.gameService = gameService;
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        private gameService: GameService,
+        private tournamentService: TournamentService
+    ) {
+        console.log('constructor called');
+        this.router = router;
+        this.gameService = gameService;
     }
 
     ngOnInit() {
+        console.log('on init called');
         this.routeSub = this.route.params.subscribe(params => {
-            this.slug = params['slug'];
+            this.gameSlug = params['gameSlug'];
 
-            this.gameService.getGame(this.slug).subscribe(game => {
+            this.gameService.getGame(this.gameSlug).subscribe(game => {
                 this.gameInfo.name = game.name;
-                this.gameInfo.iconUrl = `/static/images/icons/${this.slug}.png`;
+                this.gameInfo.iconUrl = `/static/images/icons/${this.gameSlug}.png`;
             });
+
+            this.route.queryParams.subscribe(params => {
+                if (params.page) {
+                    this.pageNum = parseInt(params.page); // todo: error handling
+                }
+                if (params.perPage) {
+                    this.itemsPerPage = parseInt(params.perPage); // todo: error handler
+                }
+
+                console.log('items per page', this.itemsPerPage);
+                console.log('page num', this.pageNum);
+
+                this.tournamentService.getTournaments(this.gameSlug, this.itemsPerPage, this.pageNum)
+                    .subscribe(tournaments => {
+                        this.tournaments = tournaments;
+                });
+            });
+
+            
         });
     }
 
     getBackground() {
-        if (this.slug) {
-            return `url(/static/images/banners/${this.slug}.jpg)`;
+        if (this.gameSlug) {
+            return `url(/static/images/banners/${this.gameSlug}.jpg)`;
         }
         else {
             return '#fff';
@@ -51,23 +74,6 @@ export class TournamentsComponent implements OnInit, OnDestroy {
         this.routeSub.unsubscribe();
     }
 
-    getIconImage(slug: string): string {
-
-        let url = ``;
-
-        this.checkImage(url,
-            (el: HTMLElement, ev: Event) => {
-                console.log('good');
-                return '';
-        },
-            (el: HTMLElement, ev: Event) => {
-                console.log('bad');
-                return '';
-            });
-
-        return '';
-    }
-
     checkImage(imageSrc: string, good: any, bad: any) {
         var img = new Image();
         img.onload = good;
@@ -75,17 +81,15 @@ export class TournamentsComponent implements OnInit, OnDestroy {
         img.src = imageSrc;
     }
 
-}
+    navigateToPage(page: number) {
+        console.log(page + 'clicked');
+        // Object.assign is used as apparently 
+        // you cannot add properties to snapshot query params
+        const queryParams: Params = Object.assign({}, this.route.snapshot.queryParams);
 
+        // Do sth about the params
+        queryParams['page'] = page;
 
-export class Tournament {
-    name: string;
-    slug: string;
-    game: string;
-    type: string;
-    participants: number;
-    capacity: number;
-    created: string;
-    status: string;
-    organizer: string;
+        this.router.navigate([], { queryParams: queryParams });
+    }
 }

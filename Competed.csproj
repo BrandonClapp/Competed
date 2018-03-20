@@ -27,6 +27,7 @@
     <None Remove="ClientApp\app\components\home\home.component.ts" />
     <None Remove="ClientApp\app\components\tournaments\tournaments.component.ts" />
     <None Remove="ClientApp\app\services\game.service.ts" />
+    <None Remove="ClientApp\app\services\tournament.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,10 +35,12 @@
     <TypeScriptCompile Include="ClientApp\app\components\home\home.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\tournaments\tournaments.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\game.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\tournament.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="ClientApp\app\components\games\images\" />
+    <Folder Include="ClientApp\app\components\tournament\" />
     <Folder Include="wwwroot\dist\" />
     <Folder Include="wwwroot\static\" />
   </ItemGroup>

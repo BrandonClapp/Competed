@@ -1,0 +1,140 @@
+﻿
+.page {
+    background: url(/static/images/banner-1.jpg);
+    background-position-x: center;
+    background-position-y: top;
+}
+
+    .page .page-gradient {
+        background: linear-gradient(315deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0.4), rgba(20,8,5,0.6), rgba(20,8,5,0.7) )
+    }
+
+    .page .fade {
+        background: linear-gradient(180deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0), rgba(20,8,5,1) 93%);
+    }
+
+.header {
+    color: #1a2023;
+}
+
+.filter-options {
+    color: black;
+    border-bottom: 1px solid #d3d3d3;
+    padding-bottom: 0.5em;
+    margin-bottom:1em;
+}
+
+input[type=text] {
+    padding: 0.5em;
+    border: 1px solid #d3d3d3;
+}
+
+.tournaments-content {
+    background: linear-gradient(rgba(255,255,255,0.8), #fff);
+    color: #576e91;
+}
+
+.game-info {
+    padding: 1.5em 0;
+}
+
+    .game-info .game-meta {
+        float: left;
+    }
+
+    .game-info .game-header {
+        line-height: 40px;
+        margin:0;
+    }
+
+    .game-info .game-icon {
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        margin-right: 1em;
+    }
+
+    
+
+.game-icon img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+    
+
+.header {
+    /*transform: rotate(-2deg);*/
+    background: url(/static/images/hex.png);
+    background-size: 300px, auto;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.header .gradient {
+    background: linear-gradient(rgba(255,255,255,0.8), #fff);
+}
+
+.content {
+    margin-bottom: 1em;
+}
+
+table {
+    width: 100%;
+    /*background: linear-gradient(to bottom, rgba(238,241,246,0.5), #fff 50%);*/
+    background: linear-gradient(rgba(255,255,255,0.8), #fff);
+    border: 1px solid #d3d3d3;
+    padding: 1em;
+    border-radius: 2px;
+    color: #1a1f22;
+}
+
+    table a {
+        color: #1a1f22;
+        transition: all 0.2s ease;
+    }
+
+        table a:hover {
+            color: #576e91;
+        }
+
+    table td, table th {
+        padding: 0.5em;
+    }
+
+ table th {
+     text-align: left;
+ }
+
+.pagination ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #d3d3d3;
+    background: linear-gradient(rgba(255,255,255,0.8), #fff);
+}
+
+    .pagination ul li {
+        margin: 0;
+        display: inline-block;
+        background: white;
+        padding: 0.5em;
+    }
+
+        .pagination ul li:hover {
+            background: #f9f9f9;
+            cursor: pointer;
+        }
+
+    .pagination ul li.active {
+        font-weight: bold;
+    }
+
+/* Experimental */
+
+/*.separator {
+    background-image: -webkit-linear-gradient(left, #fff, #ddd 35%, #ddd 65%, #fff);
+    background-image: linear-gradient(to right, #fff, #ddd 35%, #ddd 65%, #fff);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+}*/

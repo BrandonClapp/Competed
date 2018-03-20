@@ -9,11 +9,13 @@ import { HomeComponent } from './components/home/home.component';
 import { GamesComponent } from './components/games/games.component';
 import { GameGridComponent } from './components/games/gamegrid/gamegrid.component';
 import { TournamentsComponent } from './components/tournaments/tournaments.component';
+import { TournamentComponent } from './components/tournaments/tournament/tournament.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 
 import { GameService } from './services/game.service';
+import { TournamentService } from './services/tournament.service';
 
 @NgModule({
     declarations: [
@@ -22,6 +24,7 @@ import { GameService } from './services/game.service';
         GamesComponent,
         GameGridComponent,
         TournamentsComponent,
+        TournamentComponent,
         NavMenuComponent,
         FooterComponent,
         FetchDataComponent,
@@ -34,12 +37,14 @@ import { GameService } from './services/game.service';
             { path: '', component: HomeComponent, pathMatch: 'full' },
             { path: 'games', component: GamesComponent, pathMatch: 'full' },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'tournaments/:slug', component: TournamentsComponent },
+            { path: 'tournaments/:gameSlug', component: TournamentsComponent },
+            { path: 'tournaments/:gameSlug/:tournamentSlug', component: TournamentComponent },
             { path: '**', redirectTo: 'fetch-data' }
         ])
     ],
     providers: [
-        GameService
+        GameService,
+        TournamentService,
     ]
 })
 export class AppModuleShared {
