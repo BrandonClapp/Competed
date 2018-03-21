@@ -1,0 +1,147 @@
+.top {
+    background-image: url("/static/images/banner-1.jpg");
+    background-position-x: center;
+    background-position-y: top;
+}
+
+    .top .top-content {
+        background: linear-gradient(315deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0.4), rgba(20,8,5,0.6), rgba(20,8,5,0.7) );
+    }
+
+        .top .top-content .fade {
+            background: linear-gradient(180deg, rgba(114, 202, 199, 0), rgba(116, 202, 199, 0), rgba(20,8,5,1) 93%);
+        }
+
+.banner {
+    position: relative;
+    color: white;
+    background: rgba(30,47,54, 0.6);
+}
+
+
+.banner-content .pitch {
+    font-size: 32px;
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+}
+
+.banner-content .content-blocks {
+    width: 691px;
+    margin: 20px auto;
+}
+
+    .banner-content .content-block {
+        background-color: #74CAC7;
+        color: black;
+        border: 1px solid black;
+        padding: 30px;
+        margin: 15px;
+        float: left;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.2s
+    }
+
+        .banner-content .content-block:hover {
+            background-color: #5BB1AE;
+            /*color: white;*/
+        }
+
+    .banner-content .content-block:after {
+        clear: left;
+    }
+
+    .banner-content .bracket {
+        margin: 20px 0;
+    }
+
+.cta {
+    /*background-color: #E0DEE3;*/
+    padding: 30px;
+}
+
+.featured-tournaments {
+    background-image: url(/static/home/images/home-banner-4.jpg);
+}
+
+.featured-tournaments-content {
+    /*background-color: rgba(30,47,54, 0.8);*/
+    border-top: 1px solid #ececec;
+    /*background: linear-gradient(284deg, #ececec, #ececec, #48595d, rgba(30,47,54,.7) )*/
+    background: linear-gradient(rgba(255,255,255,0.8), #fff)
+}
+
+    .featured-tournaments .tournament {
+        float: left;
+        width: 225px;
+        margin-left: 14px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .featured-tournaments .tournament:nth-of-type(1) {
+        margin-left:0;
+    }
+
+    .featured-tournaments .tournament .image {
+        max-height: 300px;
+        bottom: 0px;
+    }
+
+        .featured-tournaments .tournament .info {
+            /*background-color: #1e2f36;*/
+            background-color: rgba(26, 31, 34, 0.85);
+            color: white;
+            padding: 10px;
+            font-size: 10pt;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0px;
+            border-left: 1px solid #1a2023;
+            border-right: 1px solid #1a2023;
+            border-bottom: 1px solid #1a2023;
+        }
+
+.top-games {
+    background-color: #1a1f22;
+    text-align: justify;
+}
+
+    .top-games .game {
+        float: left;
+        width: 225px;
+        margin-left: 14px;
+        cursor: pointer;
+    }
+
+    .top-games .game:nth-of-type(1) {
+        margin-left: 0px;
+    }
+
+        .top-games .game .image {
+            height: 300px;
+            background-size: cover;
+            /*filter: grayscale(100%);*/
+            transition: all 0.2s ease;
+        }
+
+            .top-games .game .image:hover {
+                /*filter: grayscale(0%);*/
+                transform: scale(1.025);
+            }
+
+    .top-games .game .image.league-of-legends {
+        background-image: url(/static/home/images/games/league-of-legends.jpg);
+    }
+    .top-games .game .image.minecraft {
+        background-image: url(/static/home/images/games/minecraft.png);
+    }
+    .top-games .game .image.rocket-league {
+        background-image: url(/static/home/images/games/rocket-league.jpg);
+    }
+    .top-games .game .image.magic-the-gathering {
+       background-image: url(/static/home/images/games/magic-the-gathering.jpg);
+    }

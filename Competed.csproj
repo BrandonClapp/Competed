@@ -5,70 +5,71 @@
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
-    <TrimUnusedDependencies>true</TrimUnusedDependencies>
-    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+
+    <!-- Set this to true if you enable server-side prerendering -->
+    <BuildServerSideRenderer>false</BuildServerSideRenderer>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
-    <PackageReference Include="Microsoft.Packaging.Tools.Trimming" Version="1.1.0-preview1-25818-01" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
-    <Content Remove="ClientApp\**" />
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\components\footer\footer.component.ts" />
-    <None Remove="ClientApp\app\components\home\home.component.ts" />
-    <None Remove="ClientApp\app\components\tournaments\tournaments.component.ts" />
-    <None Remove="ClientApp\app\services\game.service.ts" />
-    <None Remove="ClientApp\app\services\tournament.service.ts" />
+    <Content Remove="wwwroot\static\home\images\games\league-of-legends.jpg" />
+    <Content Remove="wwwroot\static\home\images\games\magic-the-gathering.jpg" />
+    <Content Remove="wwwroot\static\home\images\games\minecraft.png" />
+    <Content Remove="wwwroot\static\home\images\games\rocket-league.jpg" />
+    <Content Remove="wwwroot\static\home\images\home-banner-4.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\components\footer\footer.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\home\home.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\tournaments\tournaments.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\services\game.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\services\tournament.service.ts" />
+    <Folder Include="ClientApp\src\app\components\home\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\app\components\games\images\" />
-    <Folder Include="ClientApp\app\components\tournament\" />
-    <Folder Include="wwwroot\dist\" />
-    <Folder Include="wwwroot\static\" />
+    <None Include="wwwroot\static\home\images\games\league-of-legends.jpg" />
+    <None Include="wwwroot\static\home\images\games\magic-the-gathering.jpg" />
+    <None Include="wwwroot\static\home\images\games\minecraft.png" />
+    <None Include="wwwroot\static\home\images\games\rocket-league.jpg" />
+    <None Include="wwwroot\static\home\images\home-banner-4.jpg" />
+    <None Include="wwwroot\static\home\images\home-bracket.png" />
+    <None Include="wwwroot\static\home\images\tournament-placeholder-1.jpg" />
+    <None Include="wwwroot\static\home\images\tournament-placeholder-2.jpg" />
   </ItemGroup>
 
-  <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
     </Exec>
     <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
-
-    <!-- In development, the dist files won't exist on the first run or when cloning to
-         a different machine, so rebuild them if not already present. -->
-    <Message Importance="high" Text="Performing first-run Webpack build..." />
-    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js" />
-    <Exec Command="node node_modules/webpack/bin/webpack.js" />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
   </Target>
 
   <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
-    <Exec Command="npm install" />
-    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />
-    <Exec Command="node node_modules/webpack/bin/webpack.js --env.prod" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --prod" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr -- --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
 
     <!-- Include the newly-built files in the publish output -->
     <ItemGroup>
-      <DistFiles Include="wwwroot\dist\**; ClientApp\dist\**" />
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
       <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
         <RelativePath>%(DistFiles.Identity)</RelativePath>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
