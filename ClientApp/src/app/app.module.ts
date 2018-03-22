@@ -8,7 +8,12 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { GamesComponent } from './components/games/games.component';
+import { GameGridComponent } from './components/games/gamegrid/gamegrid.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
+
+import { GameService } from './services/game.service';
+import { TournamentService } from './services/tournament.service';
 
 @NgModule({
   declarations: [
@@ -16,6 +21,8 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     NavMenuComponent,
     FooterComponent,
     HomeComponent,
+    GamesComponent,
+    GameGridComponent,
     FetchDataComponent
   ],
   imports: [
@@ -24,10 +31,17 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'games', component: GamesComponent, pathMatch: 'full' },
       { path: 'fetch-data', component: FetchDataComponent },
+      //{ path: 'tournaments/:gameSlug', component: TournamentsComponent },
+      //{ path: 'tournaments/:gameSlug/:tournamentSlug', component: TournamentComponent },
+      { path: '**', redirectTo: 'fetch-data' }
     ])
   ],
-  providers: [],
+  providers: [
+    GameService,
+    TournamentService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
