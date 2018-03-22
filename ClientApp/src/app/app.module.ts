@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 
@@ -13,6 +14,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
   declarations: [
     AppComponent,
     NavMenuComponent,
+    FooterComponent,
     HomeComponent,
     FetchDataComponent
   ],
