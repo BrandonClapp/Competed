@@ -1,6 +1,6 @@
 
 .page {
-    background: url(/static/images/backgrounds/main.jpg);
+    background: url(/images/backgrounds/main.jpg);
     background-position-x: center;
     background-position-y: top;
 }
@@ -65,7 +65,7 @@ input[type=text] {
 
 .header {
     /*transform: rotate(-2deg);*/
-    background: url(/static/images/backgrounds/hex.png);
+    background: url(/images/backgrounds/hex.png);
     background-size: 300px, auto;
     border-bottom: 1px solid #d3d3d3;
 }

@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { GameService } from '../../../services/game.service';
@@ -31,7 +31,7 @@ export class TournamentComponent implements OnInit, OnDestroy {
 
             this.gameService.getGame(this.gameSlug).subscribe(game => {
                 this.gameInfo.name = game.name;
-                this.gameInfo.iconUrl = `/static/images/icons/${this.gameSlug}.png`;
+                this.gameInfo.iconUrl = `/images/icons/games/${this.gameSlug}.png`;
             });
 
             this.tournamentService.getTournament(this.gameSlug, this.tournamentSlug).subscribe(tournament => {
@@ -42,7 +42,7 @@ export class TournamentComponent implements OnInit, OnDestroy {
 
     getBackground() {
         if (this.gameSlug) {
-            return `url(/static/images/banners/${this.gameSlug}.jpg)`;
+            return `url(/images/backgrounds/games/${this.gameSlug}.jpg)`;
         }
         else {
             return '#fff';

@@ -1,4 +1,4 @@
-﻿import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
     selector: 'gamegrid',
@@ -17,7 +17,7 @@ export class GameGridComponent implements OnInit, OnChanges {
     ngOnInit() {
 
         for (let game of this.games) {
-            game.imgUrl = `static/images/games/${game.slug}.jpg`;
+            game.imgUrl = `/images/games/${game.slug}.jpg`;
         }
         this.allGames = Object.assign([], this.games);
 

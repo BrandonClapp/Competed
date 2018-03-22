@@ -37,7 +37,7 @@ export class TournamentsComponent implements OnInit, OnDestroy {
 
             this.gameService.getGame(this.gameSlug).subscribe(game => {
                 this.gameInfo.name = game.name;
-                this.gameInfo.iconUrl = `/static/images/icons/games/${this.gameSlug}.png`;
+                this.gameInfo.iconUrl = `/images/icons/games/${this.gameSlug}.png`;
             });
 
             this.route.queryParams.subscribe(params => {
@@ -63,7 +63,7 @@ export class TournamentsComponent implements OnInit, OnDestroy {
 
     getBackground() {
         if (this.gameSlug) {
-            return `url(/static/images/backgrounds/games/${this.gameSlug}.jpg)`;
+            return `url(/images/backgrounds/games/${this.gameSlug}.jpg)`;
         }
         else {
             return '#fff';

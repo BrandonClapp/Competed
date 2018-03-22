@@ -11,7 +11,7 @@
                             <div class="container">
                                 <div class="game-info">
                                     <div class="game-icon">
-                                        <img [src]="gameInfo.iconUrl" onError="this.src='/static/images/icons/games/unknown.png'" />
+                                        <img [src]="gameInfo.iconUrl" onError="this.src='/images/icons/games/unknown.png'" />
                                     </div>
                                     <div class="game-meta">
                                         <h2 class="game-header">{{gameInfo.name}} Tournaments</h2>
@@ -49,7 +49,7 @@
                                             <a [routerLink]="['/tournaments', tournament.game, tournament.slug]">{{ tournament.name }}</a>
                                         </td>
                                         <td>
-                                            <img src="/static/images/icons/games/{{ tournament.game }}.png" width="25px" />
+                                            <img src="/images/icons/games/{{ tournament.game }}.png" width="25px" />
                                         </td>
                                         <td>{{ tournament.type }}</td>
                                         <td>{{ tournament.participants }} / {{ tournament.capacity }}</td>
