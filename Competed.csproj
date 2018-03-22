@@ -28,29 +28,6 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Remove="wwwroot\static\home\images\games\league-of-legends.jpg" />
-    <Content Remove="wwwroot\static\home\images\games\magic-the-gathering.jpg" />
-    <Content Remove="wwwroot\static\home\images\games\minecraft.png" />
-    <Content Remove="wwwroot\static\home\images\games\rocket-league.jpg" />
-    <Content Remove="wwwroot\static\home\images\home-banner-4.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ClientApp\src\app\components\home\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\static\home\images\games\league-of-legends.jpg" />
-    <None Include="wwwroot\static\home\images\games\magic-the-gathering.jpg" />
-    <None Include="wwwroot\static\home\images\games\minecraft.png" />
-    <None Include="wwwroot\static\home\images\games\rocket-league.jpg" />
-    <None Include="wwwroot\static\home\images\home-banner-4.jpg" />
-    <None Include="wwwroot\static\home\images\home-bracket.png" />
-    <None Include="wwwroot\static\home\images\tournament-placeholder-1.jpg" />
-    <None Include="wwwroot\static\home\images\tournament-placeholder-2.jpg" />
-  </ItemGroup>
-
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
