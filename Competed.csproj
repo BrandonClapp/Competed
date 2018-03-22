@@ -7,9 +7,13 @@
     <IsPackable>false</IsPackable>
     <SpaRoot>ClientApp\</SpaRoot>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
-
+    
+    <!-- Use workstation gc for lower memory consumption -->
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>true</BuildServerSideRenderer>
+    
     <UserSecretsId>8b80273b-9809-4ca2-a1da-728b40f958ba</UserSecretsId>
   </PropertyGroup>
 
