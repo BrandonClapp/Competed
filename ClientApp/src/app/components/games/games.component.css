@@ -1,5 +1,5 @@
-﻿.page {
-    background: url(/static/images/banner-1.jpg);
+.page {
+    background: url(/static/images/backgrounds/main.jpg);
     background-position-x: center;
     background-position-y: top;
 }

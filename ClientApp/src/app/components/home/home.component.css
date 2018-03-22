@@ -1,5 +1,5 @@
 .top {
-    background-image: url("/static/images/banner-1.jpg");
+    background-image: url("/static/images/backgrounds/main.jpg");
     background-position-x: center;
     background-position-y: top;
 }
@@ -63,7 +63,7 @@
 }
 
 .featured-tournaments {
-    background-image: url(/static/home/images/home-banner-4.jpg);
+    background-image: url(/static/images/backgrounds/featured.jpg);
 }
 
 .featured-tournaments-content {
@@ -134,14 +134,14 @@
             }
 
     .top-games .game .image.league-of-legends {
-        background-image: url(/static/home/images/games/league-of-legends.jpg);
+        background-image: url(/static/images/games/league-of-legends.jpg);
     }
     .top-games .game .image.minecraft {
-        background-image: url(/static/home/images/games/minecraft.png);
+        background-image: url(/static/images/games/minecraft.jpg);
     }
     .top-games .game .image.rocket-league {
-        background-image: url(/static/home/images/games/rocket-league.jpg);
+        background-image: url(/static/images/games/rocket-league.jpg);
     }
-    .top-games .game .image.magic-the-gathering {
-       background-image: url(/static/home/images/games/magic-the-gathering.jpg);
+    .top-games .game .image.fortnite {
+       background-image: url(/static/images/games/fortnite.jpg);
     }
