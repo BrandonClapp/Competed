@@ -1,0 +1,39 @@
+.title-info {
+  padding: 1.5em 0;
+}
+
+  .title-info .title-meta {
+    float: left;
+  }
+
+  .title-info .title-header {
+    line-height: 40px;
+    margin: 0;
+  }
+
+  .title-info .title-icon {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 1em;
+  }
+
+.title-icon img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.header {
+  background: url(/images/backgrounds/hex.png);
+  background-size: 300px, auto;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.header {
+  color: #1a2023;
+}
+
+
+  .header .gradient {
+    background: linear-gradient(rgba(255,255,255,0.8), #fff);
+  }

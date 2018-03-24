@@ -1,0 +1,19 @@
+<div class="header">
+  <div class="gradient">
+    <div class="container">
+      <div class="title-info">
+        <div class="title-icon">
+          <img [src]="iconUrl" onError="this.src='/images/icons/games/unknown.png'" />
+        </div>
+        <div class="title-meta">
+          <!-- Change this to title header. Store title in tournaments component. -->
+          <h2 class="title-header">{{ title }}</h2>
+          <div class="title-stats">
+            {{ metaLine }}
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>

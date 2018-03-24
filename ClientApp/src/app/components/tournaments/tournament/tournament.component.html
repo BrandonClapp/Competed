@@ -1,41 +1,5 @@
-<!--TODO:
-    - Rename elements
-    - Remove unused css selectors/styles
-    
-    -->
+<tournament-header [title]="title" [iconUrl]="iconUrl"></tournament-header>
 
-<div id="page" class="page" [ngStyle]="{ 'background': getBackground() }">
-    <div class="page-gradient">
-        <div class="fade">
-            <nav-menu></nav-menu>
-
-            <div class="tournaments">
-                <div class="tournaments-content">
-
-                    <div class="header">
-                        <div class="gradient">
-                            <div class="container">
-                                <div class="game-info">
-                                    <div class="game-icon">
-                                        <img [src]="gameInfo.iconUrl" onError="this.src='/images/icons/games/unknown.png'" />
-                                    </div>
-                                    <div class="game-meta">
-                                        <h2 class="game-header">{{ tournament.name }}</h2>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        Stuff about this tournament.
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
+<div class="container">
+  {{title}} Stuff about this tournament.
 </div>
-<div class="push-down"></div>

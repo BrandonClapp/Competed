@@ -1,0 +1,66 @@
+input[type=text] {
+  padding: 0.5em;
+  border: 1px solid #d3d3d3;
+}
+
+.filter-options {
+  color: black;
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+.content {
+  margin-bottom: 1em;
+}
+
+table {
+  width: 100%;
+  /*background: linear-gradient(to bottom, rgba(238,241,246,0.5), #fff 50%);*/
+  background: linear-gradient(rgba(255,255,255,0.8), #fff);
+  border: 1px solid #d3d3d3;
+  padding: 1em;
+  border-radius: 2px;
+  color: #1a1f22;
+}
+
+  table a {
+    color: #1a1f22;
+    transition: all 0.2s ease;
+  }
+
+    table a:hover {
+      color: #576e91;
+    }
+
+  table td, table th {
+    padding: 0.5em;
+  }
+
+  table th {
+    text-align: left;
+  }
+
+.pagination ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #d3d3d3;
+  background: linear-gradient(rgba(255,255,255,0.8), #fff);
+}
+
+  .pagination ul li {
+    margin: 0;
+    display: inline-block;
+    background: white;
+    padding: 0.5em;
+  }
+
+    .pagination ul li:hover {
+      background: #f9f9f9;
+      cursor: pointer;
+    }
+
+    .pagination ul li.active {
+      font-weight: bold;
+    }

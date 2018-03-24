@@ -1,0 +1,45 @@
+<tournament-header [title]="title" [iconUrl]="iconUrl" [metaLine]="metaLine"></tournament-header>
+
+<div class="container">
+  <div class="filter-options">
+    <input type="text" placeholder="Title Search" />
+  </div>
+  <table class="content">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Game</th>
+        <th>Type</th>
+        <th>Participants</th>
+        <th>Created On</th>
+        <th>Status</th>
+        <th>Organizer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tournament of tournaments">
+        <td>
+          <a [routerLink]="['/tournaments', tournament.game, tournament.slug]">{{ tournament.name }}</a>
+        </td>
+        <td>
+          <img src="/images/icons/games/{{ tournament.game }}.png" width="25px" />
+        </td>
+        <td>{{ tournament.type }}</td>
+        <td>{{ tournament.participants }} / {{ tournament.capacity }}</td>
+        <td>{{ tournament.created }}</td>
+        <td>{{ tournament.status }}</td>
+        <td>{{ tournament.organizer }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!--TODO: convert to component-->
+  <div class="pagination content">
+    <ul>
+      <li><i class="fa fa-angle-left"></i></li>
+      <li *ngFor="let page of pages" (click)="navigateToPage(page)">{{ page }}</li>
+      <li><i class="fa fa-angle-right"></i></li>
+    </ul>
+  </div>
+
+</div>
