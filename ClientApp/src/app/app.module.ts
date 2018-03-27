@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { TabsComponent } from './components/tabs/tabs.component';
+
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -22,6 +24,7 @@ import { TournamentService } from './services/tournament.service';
 @NgModule({
   declarations: [
     AppComponent,
+    TabsComponent,
     NavMenuComponent,
     FooterComponent,
     HomeComponent,
