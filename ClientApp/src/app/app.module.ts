@@ -16,10 +16,13 @@ import { TournamentsComponent } from './components/tournaments/tournaments.compo
 import { TournamentHeaderComponent } from './components/tournaments/tournament-header/tournamentheader.component';
 import { TournamentListComponent } from './components/tournaments/tournament-list/tournamentlist.component';
 import { TournamentComponent } from './components/tournaments/tournament/tournament.component';
+import { TournamentTeamsComponent } from './components/tournaments/tournament/tournament-teams/tournamentteams.component';
+import { TournamentOverviewComponent } from './components/tournaments/tournament/tournament-overview/tournamentoverview.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 
 import { GameService } from './services/game.service';
 import { TournamentService } from './services/tournament.service';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { TournamentService } from './services/tournament.service';
     TournamentHeaderComponent,
     TournamentListComponent,
     TournamentComponent,
+    TournamentOverviewComponent,
+    TournamentTeamsComponent,
     FetchDataComponent
   ],
   imports: [
@@ -49,11 +54,18 @@ import { TournamentService } from './services/tournament.service';
         component: TournamentsComponent,
         children: [
           { path: '', component: TournamentListComponent },
-          { path: ':tournamentSlug', component: TournamentComponent },
+          {
+            path: ':tournamentSlug',
+            component: TournamentComponent,
+            children: [
+              { path: '', component: TournamentOverviewComponent, pathMatch: 'full' },
+              { path: 'teams', component: TournamentTeamsComponent }
+            ]
+          },
         ]
       },
       
-      { path: '**', redirectTo: 'fetch-data' }
+      //{ path: '**', redirectTo: 'fetch-data' }
     ])
   ],
   providers: [
