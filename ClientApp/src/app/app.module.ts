@@ -24,11 +24,15 @@ import { TournamentHeaderComponent } from './components/tournaments/tournament-h
 import { TournamentListComponent } from './components/tournaments/tournament-list/tournamentlist.component';
 import { TournamentComponent } from './components/tournaments/tournament/tournament.component';
 import { TournamentTeamsComponent } from './components/tournaments/tournament/tournament-teams/tournamentteams.component';
-import { TournamentOverviewComponent } from './components/tournaments/tournament/tournament-overview/tournamentoverview.component';
 import { TournamentStandingsComponent } from './components/tournaments/tournament/tournament-standings/tournamentstandings.component';
 import { TournamentStatisticsComponent } from './components/tournaments/tournament/tournament-statistics/tournamentstatistics.component';
 import { TournamentScheduleComponent } from './components/tournaments/tournament/tournament-schedule/tournamentschedule.component';
 import { TournamentMediaComponent } from './components/tournaments/tournament/tournament-media/tournamentmedia.component';
+import { TournamentDetailsComponent } from './components/tournaments/tournament/tournament-details/tournamentdetails.component';
+import { TournamentRulesComponent } from './components/tournaments/tournament/tournament-rules/tournamentrules.component';
+import { TournamentDiscussionComponent } from './components/tournaments/tournament/tournament-discussion/tournamentdiscussion.component';
+import { TournamentPrizesComponent } from './components/tournaments/tournament/tournament-prizes/tournamentprizes.component';
+import { TournamentAnnouncementsComponent } from './components/tournaments/tournament/tournament-announcements/tournamentannouncements.component';
 
 
 
@@ -45,11 +49,15 @@ import { TournamentMediaComponent } from './components/tournaments/tournament/to
     TournamentHeaderComponent,
     TournamentListComponent,
     TournamentComponent,
-    TournamentOverviewComponent,
+    TournamentDetailsComponent,
     TournamentTeamsComponent,
+    TournamentRulesComponent,
+    TournamentDiscussionComponent,
+    TournamentPrizesComponent,
     TournamentStandingsComponent,
     TournamentStatisticsComponent,
     TournamentScheduleComponent,
+    TournamentAnnouncementsComponent,
     TournamentMediaComponent,
     FetchDataComponent
   ],
@@ -61,7 +69,7 @@ import { TournamentMediaComponent } from './components/tournaments/tournament/to
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'games', component: GamesComponent, pathMatch: 'full' },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: ':org', component: TournamentOverviewComponent }, /* make org page ? */
+      { path: ':org', component: TournamentDetailsComponent }, /* make org page ? */
       {
         path: 'tournaments/:gameSlug',
         component: TournamentsComponent,
@@ -71,11 +79,15 @@ import { TournamentMediaComponent } from './components/tournaments/tournament/to
             path: ':tournamentSlug',
             component: TournamentComponent,
             children: [
-              { path: '', component: TournamentOverviewComponent, pathMatch: 'full' },
+              { path: '', component: TournamentDetailsComponent, pathMatch: 'full' },
               { path: 'teams', component: TournamentTeamsComponent },
+              { path: 'rules', component: TournamentRulesComponent },
               { path: 'standings', component: TournamentStandingsComponent },
               { path: 'statistics', component: TournamentStatisticsComponent },
               { path: 'schedule', component: TournamentScheduleComponent },
+              { path: 'discussion', component: TournamentDiscussionComponent },
+              { path: 'prizes', component: TournamentPrizesComponent },
+              { path: 'announcements', component: TournamentAnnouncementsComponent },
               { path: 'media', component: TournamentMediaComponent },
             ]
           },

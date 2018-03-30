@@ -21,6 +21,7 @@ ul.tabs {
     border-bottom: 1px solid #f4f4f4;
     border-radius: 3px 3px 0 0;
     cursor: pointer;
+    outline: 0;
   }
 
   ul.tabs li.tab.active {

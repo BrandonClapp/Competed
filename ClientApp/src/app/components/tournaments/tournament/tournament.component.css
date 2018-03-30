@@ -1,7 +1,7 @@
 .page {
     background: url(/images/backgrounds/main.jpg);
-    background-position-x: center;
-    background-position-y: top;
+    background-position-x: center !important;
+    background-position-y: top !important;
 }
 
     .page .page-gradient {
@@ -128,12 +128,6 @@ table {
         font-weight: bold;
     }
 
-/* Experimental */
-
-/*.separator {
-    background-image: -webkit-linear-gradient(left, #fff, #ddd 35%, #ddd 65%, #fff);
-    background-image: linear-gradient(to right, #fff, #ddd 35%, #ddd 65%, #fff);
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: 100% 1px;
-}*/
+.tab-content {
+  min-height: 500px;
+}

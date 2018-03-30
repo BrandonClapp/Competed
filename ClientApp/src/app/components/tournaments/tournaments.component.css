@@ -1,8 +1,8 @@
 
 .page {
     background: url(/images/backgrounds/main.jpg);
-    background-position-x: center;
-    background-position-y: top;
+    background-position-x: center !important;
+    background-position-y: top !important;
 }
 
     .page .page-gradient {
