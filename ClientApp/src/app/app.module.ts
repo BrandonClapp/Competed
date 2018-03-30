@@ -61,6 +61,7 @@ import { TournamentMediaComponent } from './components/tournaments/tournament/to
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'games', component: GamesComponent, pathMatch: 'full' },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: ':org', component: TournamentOverviewComponent }, /* make org page ? */
       {
         path: 'tournaments/:gameSlug',
         component: TournamentsComponent,
