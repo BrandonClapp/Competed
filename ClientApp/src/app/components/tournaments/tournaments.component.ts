@@ -69,15 +69,5 @@ export class TournamentsComponent implements OnInit, OnDestroy {
     img.src = imageSrc;
   }
 
-  navigateToPage(page: number) {
-    console.log(page + 'clicked');
-    // Object.assign is used as apparently 
-    // you cannot add properties to snapshot query params
-    const queryParams: Params = Object.assign({}, this.route.snapshot.queryParams);
-
-    // Do sth about the params
-    queryParams['page'] = page;
-
-    this.router.navigate([], { queryParams: queryParams });
-  }
+  
 }

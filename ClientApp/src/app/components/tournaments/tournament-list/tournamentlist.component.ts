@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { TournamentService, Tournament } from "../../../services/tournament.service";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Params, Router } from "@angular/router";
 import { GameService } from "../../../services/game.service";
 import { Subscription } from "rxjs/Subscription";
 import { OnDestroy } from "@angular/core/src/metadata/lifecycle_hooks";
@@ -12,8 +12,10 @@ import { OnDestroy } from "@angular/core/src/metadata/lifecycle_hooks";
 })
 export class TournamentListComponent implements OnInit, OnDestroy {
 
+  pages: Array<number> = [1, 2, 3, 4];
   routeSub: Subscription;
   route: ActivatedRoute;
+  router: Router;
   tournamentService: TournamentService;
   gameService: GameService;
   tournaments: Tournament[];
@@ -24,10 +26,12 @@ export class TournamentListComponent implements OnInit, OnDestroy {
 
   constructor(
     route: ActivatedRoute,
+    router: Router,
     tournamentService: TournamentService,
     gameService: GameService
   ) {
     this.route = route;
+    this.router = router;
     this.tournamentService = tournamentService;
     this.gameService = gameService;
   }
@@ -53,5 +57,17 @@ export class TournamentListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.routeSub.unsubscribe();
+  }
+
+  navigateToPage(page: number) {
+    console.log(page + 'clicked');
+    // Object.assign is used as apparently 
+    // you cannot add properties to snapshot query params
+    const queryParams: Params = Object.assign({}, this.route.snapshot.queryParams);
+
+    // Do sth about the params
+    queryParams['page'] = page;
+
+    this.router.navigate([], { queryParams: queryParams });
   }
 }
