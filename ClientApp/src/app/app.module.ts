@@ -4,6 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { FetchDataComponent } from './fetch-data/fetch-data.component';
+
+/* Services */ 
+import { GameService } from './services/game.service';
+import { TournamentService } from './services/tournament.service';
+
+
 import { TabsComponent } from './components/tabs/tabs.component';
 
 import { AppComponent } from './app.component';
@@ -18,10 +25,11 @@ import { TournamentListComponent } from './components/tournaments/tournament-lis
 import { TournamentComponent } from './components/tournaments/tournament/tournament.component';
 import { TournamentTeamsComponent } from './components/tournaments/tournament/tournament-teams/tournamentteams.component';
 import { TournamentOverviewComponent } from './components/tournaments/tournament/tournament-overview/tournamentoverview.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { TournamentStandingsComponent } from './components/tournaments/tournament/tournament-standings/tournamentstandings.component';
+import { TournamentStatisticsComponent } from './components/tournaments/tournament/tournament-statistics/tournamentstatistics.component';
+import { TournamentScheduleComponent } from './components/tournaments/tournament/tournament-schedule/tournamentschedule.component';
+import { TournamentMediaComponent } from './components/tournaments/tournament/tournament-media/tournamentmedia.component';
 
-import { GameService } from './services/game.service';
-import { TournamentService } from './services/tournament.service';
 
 
 @NgModule({
@@ -39,6 +47,10 @@ import { TournamentService } from './services/tournament.service';
     TournamentComponent,
     TournamentOverviewComponent,
     TournamentTeamsComponent,
+    TournamentStandingsComponent,
+    TournamentStatisticsComponent,
+    TournamentScheduleComponent,
+    TournamentMediaComponent,
     FetchDataComponent
   ],
   imports: [
@@ -59,7 +71,11 @@ import { TournamentService } from './services/tournament.service';
             component: TournamentComponent,
             children: [
               { path: '', component: TournamentOverviewComponent, pathMatch: 'full' },
-              { path: 'teams', component: TournamentTeamsComponent }
+              { path: 'teams', component: TournamentTeamsComponent },
+              { path: 'standings', component: TournamentStandingsComponent },
+              { path: 'statistics', component: TournamentStatisticsComponent },
+              { path: 'schedule', component: TournamentScheduleComponent },
+              { path: 'media', component: TournamentMediaComponent },
             ]
           },
         ]
