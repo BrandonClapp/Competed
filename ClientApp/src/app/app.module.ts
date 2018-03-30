@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { TabsComponent } from './components/tabs/tabs.component';
+
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -11,6 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { GamesComponent } from './components/games/games.component';
 import { GameGridComponent } from './components/games/gamegrid/gamegrid.component';
 import { TournamentsComponent } from './components/tournaments/tournaments.component';
+import { TournamentHeaderComponent } from './components/tournaments/tournament-header/tournamentheader.component';
+import { TournamentListComponent } from './components/tournaments/tournament-list/tournamentlist.component';
 import { TournamentComponent } from './components/tournaments/tournament/tournament.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 
@@ -20,12 +24,15 @@ import { TournamentService } from './services/tournament.service';
 @NgModule({
   declarations: [
     AppComponent,
+    TabsComponent,
     NavMenuComponent,
     FooterComponent,
     HomeComponent,
     GamesComponent,
     GameGridComponent,
     TournamentsComponent,
+    TournamentHeaderComponent,
+    TournamentListComponent,
     TournamentComponent,
     FetchDataComponent
   ],
@@ -37,8 +44,15 @@ import { TournamentService } from './services/tournament.service';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'games', component: GamesComponent, pathMatch: 'full' },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'tournaments/:gameSlug', component: TournamentsComponent },
-      { path: 'tournaments/:gameSlug/:tournamentSlug', component: TournamentComponent },
+      {
+        path: 'tournaments/:gameSlug',
+        component: TournamentsComponent,
+        children: [
+          { path: '', component: TournamentListComponent },
+          { path: ':tournamentSlug', component: TournamentComponent },
+        ]
+      },
+      
       { path: '**', redirectTo: 'fetch-data' }
     ])
   ],

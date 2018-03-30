@@ -1,0 +1,29 @@
+.tabs-area {
+  /*background: linear-gradient(rgba(255,255,255,.8),#fff);*/
+  border-bottom: 1px solid #1a1f22;
+}
+
+.tabs-container {
+  padding-bottom: 0;
+}
+
+ul.tabs {
+  margin: 0;
+  padding: 0;
+}
+
+  ul.tabs li.tab {
+    display: inline-block;
+    list-style: none;
+    padding: 1em;
+    background-color: #f4f4f4;
+    border: 1px solid #1a1f22;
+    border-bottom: 1px solid #f4f4f4;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+  }
+
+  ul.tabs li.tab.active {
+    background-color: white;
+  }
+

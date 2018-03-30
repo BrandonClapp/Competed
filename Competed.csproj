@@ -33,10 +33,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\components\tabs\tabs.component.ts" />
+    <None Remove="ClientApp\src\app\components\tournaments\tournament-header\tournamentheader.component.ts" />
+    <None Remove="ClientApp\src\app\components\tournaments\tournament-list\tournamentlist.component.ts" />
     <None Remove="ClientApp\src\main.server.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\components\tabs\tabs.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\components\tournaments\tournament-header\tournamentheader.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\components\tournaments\tournament-list\tournamentlist.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\main.server.ts" />
   </ItemGroup>
 
