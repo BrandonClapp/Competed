@@ -1,2 +1,26 @@
-﻿body {
+.header {
+  font-size: 16pt;
+  background-color: #ccc;
 }
+
+.body {
+  padding: 0.5em;
+  background-color: white;
+}
+
+.details {
+  grid-template-columns: repeat(2, 1fr);
+}
+.half {
+  width: 48%;
+  margin: 0.5em 1%;
+}
+
+.full {
+  width: 100%;
+}
+
+.block {
+  float: left;
+}
+
